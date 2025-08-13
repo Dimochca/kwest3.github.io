@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arina's birthday</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            position: fixed;
+            font-size: 20px ;
+        }
+        body {
+            width: 100%;
+        }
+        .question1 {
+            position: fixed;
+            width: 100%;
+            height: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .question2 {
+            margin-top: 30%;
+            width: 100%;
+            height: 0%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .answerbox {
+            margin-top: 70%;
+            margin-left: 35%;
+            width: 30%;
+            height: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .answer {
+            margin-top: 70%;
+            width: 30%;
+            height: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            font-size: 20px;
+        }
+        .fon {
+            background: linear-gradient(yellow, orange);
+            width: 100%;
+            height: 100%;
+        }
+        .code {
+            padding-left: 3%;
+            padding-top: 55%;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+        .codeimg{
+            opacity: 0;
+            width: 40%;
+            transition: opacity 0.5s;
+            padding-left: 29%;
+            padding-top: 63%;
+        }
+    </style>
+</head>
+<body>
+    <div class="fon"></div>
+    <div class="background">
+        <div>
+            <h1></h1>
+            <h1 class="question1">Задание 2:</h1>
+            <h1 class="question2">Гладит всё, чего касается,а дотронешься — кусается. Что это?</h1>
+            <form>
+                <div class="answerbox"> 
+                    <input type="text" id="checkInput" class="answer" placeholder="Ответ">
+                </div> 
+            </form>  
+            <h1 class="code">Следующий QR-code находится</h1>
+            <img class ="codeimg" src="photo_2025-08-13_11-27-21.jpg" alt="">
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const input = document.getElementById('checkInput');
+            const codeText = document.querySelector('.code');
+            const codeImg = document.querySelector('.codeimg');
+            input.addEventListener('input', function() {
+                const value = this.value.trim().toLowerCase();
+                
+                if (value === 'утюг') {
+                    codeText.style.opacity = '1';
+                    codeImg.style.opacity = '1';
+                } else {
+                    codeText.style.opacity = '0';
+                    codeImg.style.opacity = '0';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
